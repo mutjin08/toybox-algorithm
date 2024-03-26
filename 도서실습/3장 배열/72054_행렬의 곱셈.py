@@ -1,8 +1,8 @@
 def solution(arr1, arr2):
     answer = []
-    for a in arr1:
+    for a1 in arr1:
         temp = []
-        for b in zip(*arr2):
-            temp.append(sum(i*j for i, j in zip(a, b)))
+        for a2 in zip(*arr2):
+            temp.append(sum([i*j for i, j in zip(a1, a2)]))
         answer.append(temp)
     return answer
