@@ -1,22 +1,17 @@
-def convert(x):
+def toBin(n):
     answer = ""
-    while x>0:
-        answer = str(x%2)+answer
-        x //= 2
+    while n > 0:
+        answer = str(n%2) + answer
+        n //= 2
     return answer
 
-def solution(s):
+def solution(x):
     answer = [0, 0]
-    
-    x = s
-    while x!="1":
-        answer[0]+=1
-        
-        answer[1]+=len(x)
+    while x != "1":
+        answer[0] += 1
+        answer[1] += len(x)
         x = x.replace("0","")
-        answer[1]-=len(x)
-        
+        answer[1] -= len(x)
         c = len(x)
-        x = convert(c)
-    
+        x = toBin(c)
     return answer
